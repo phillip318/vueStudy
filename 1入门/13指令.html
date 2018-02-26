@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-for</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <ul>
+        <li v-for="item,index in list" v-on:click="handler(index)">{{item}}</li>
+    </ul>
+</div>
+
+<script>
+    /*
+    *   v-for 循环数据列表
+    *   语法：   v-for = "值，下标 in 数组"
+    * */
+    let vm = new Vue({
+        el:'#app',
+        data:{
+            list:[1,2,3,4]
+        },
+        methods:{
+            handler(i){
+                alert(i);
+            }
+        }
+    })
+</script>
+
+</body>
+</html>

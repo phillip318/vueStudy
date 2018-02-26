@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+
+    <!--<div id="app">{{book}}</div>
+
+    <script>
+        var app = new Vue({
+            el:'#app',
+            data:{
+                book:'《Vue.js实战》'
+            }
+        })
+        //大括号里的内容会被实时替换， 例如下面的案例
+    </script>-->
+
+     <div id="app">{{date}}</div>
+   <script>
+        var app = new Vue({
+            el:'#app',
+            data:{
+                date:new Date()
+            },
+            mounted:function(){
+                var _this = this; //先存起来到时候有用
+                console.log(this)
+                this.timer = setInterval(function(){
+                    _this.date = new Date(); //更新实时时间数据
+                },1000)
+            },
+            beforeDestory:function(){
+                if(this.timer){
+                    clearInterval(this.timer);
+                }
+            }
+        })
+    </script>
+</body>
+</html>

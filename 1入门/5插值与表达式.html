@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+
+    <div id="app">
+        <span v-html="link"></span>   <!--在span内部生成一个a标签-->
+    </div>.
+    <script>
+        //如果想输出 HTML 而不是将数据 解释后的纯文本， 可以用v-html:
+        var app = new Vue({
+            el:'#app',
+            data:{
+                link:'<a href="http://www.baidu.com">这是一个链接</a>'
+            }
+        })
+    </script>
+</body>
+</html>

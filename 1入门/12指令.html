@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-on</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+<!--
+    v-bind最基本的用途就是 将数据 和 html元素的 属性值 绑定起来
+    当数据发生变化时， 所绑定的元素的属性值也将一起改变
+ -->
+
+<div id="app">
+<!--    <a v-bind:href="url">这是一个链接</a>
+    <img v-bind:src="imgUrl"/>
+    <input type="button" v-on:click="foo" value="改变数据"/>-->
+    <p v-if="show">显示这段文本</p>
+    <input type="button" v-on:click="foo2" value="点击隐藏"/>
+</div>
+
+
+
+<script>
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            url:'https://www.panda.tv/',
+            imgUrl:'https://i.h2.pdim.gs/a956a4c1899d4cdda40d75ecec789a24.jpeg',
+            show:true
+        },
+        methods:{
+            foo(){
+                this.url = 'http://douyutv.com'
+            },
+            foo2(){
+                // 在methods 内部 this指代  vue实例本身   所以不用  另外 用vm
+                this.show = false
+            }
+        }
+    })
+
+
+</script>
+<!--
+    <img v-bind:src="imgUrl"/>
+    <input type="button" v-on:click="foo" value="改变数据"/>
+     v-bind和  v-on都可以缩写
+
+    <img :src="imgUrl"/>
+    <input type="button" @click="foo" value="改变数据"/>
+ -->
+</body>
+</html>

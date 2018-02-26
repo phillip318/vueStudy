@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hello world和双向数据绑定</title>
+</head>
+<body>
+
+<script src="vue.js"></script>
+
+    <div id="app">
+        <input type="text" v-model="name"/>
+        <h1>hello world~ {{name}}</h1>
+    </div>
+
+<script>
+  /*  new Vue({
+        el:'#app',
+        data:{
+            name:'luolu'
+        }
+    })*/
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            name: 'luolu'
+        }
+    })
+    console.log(vm.$el)
+    console.log(vm.name)
+</script>
+</body>
+</html>

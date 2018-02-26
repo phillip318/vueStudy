@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-if</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <!--
+        指令是vuejs中最常用的一项功能，它带有 v- 开头 ,例如 v-for v-if  v-html等
+
+        指令的职责就是当其表达式的值改变时，相应的将某些行为应用到DOM上  ， 以v-if为例
+     -->
+    <div id="app">
+        <p v-if="show">显示这段文本</p>
+    </div>
+
+    <script>
+        new Vue({
+            el:'#app',
+            data:{
+                show:false
+            }
+        })
+    </script>
+</body>
+</html>

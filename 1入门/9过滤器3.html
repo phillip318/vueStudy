@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+<div id="app">
+    {{date|formatDate('arg1','arg2')}}
+</div>
+
+<script>
+    //在月份  日期  小时  等小于10的时候前面补0
+    var padDate = function(value){
+        return value<10?'0'+value:value;
+    }
+
+    new Vue({
+        el:'#app',
+        data:{
+            date:new Date()
+        },
+        filters:{
+            formatDate(value,a,b){
+                var year = value.getFullYear();
+                var month = padDate(value.getMonth()+1);
+                var day = padDate(value.getDate()+1);
+                var hours = padDate(value.getHours());
+                var minutes = padDate(value.getMinutes());
+                var seconds = padDate(value.getSeconds());
+                //将整理好的数据返回
+                return  year+'-'+month+'-'+day+' '+hours+':'+minutes+':'+seconds+a+''+b;
+            }
+        },
+        mounted:function(){
+            var _this = this; //先存起来到时候有用
+
+            this.timer = setInterval(function(){
+                _this.date = new Date(); //更新实时时间数据
+            },1000)
+        }
+    })
+</script>
+</body>
+</html>
