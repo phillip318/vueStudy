@@ -1,0 +1,3 @@
+=================案例1=================
+1   创建 hello.vue  (注意讲清楚 文件里的三个部分   template   script   style，  template内必须有一个div)
+2   在App.vue 中引入  hello.vue  ，注册组件， 使用组件
